@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html>
-    
+<html ng-app="modone">
+
     <head >
         <script src="js/libs/angular.min.js"></script>
         <script src="js/libs/angular-route.js"></script>
         <script src="js/libs/appmodule.js"></script>
-        
-         <link rel="stylesheet" href="css/bootstrap.css">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
         <title>sample app</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body >
+        <p>{{34 + 33}}</p>
+        <div ng-controller="controlregistro">
+            <table>
+                <tr>
+                    <td>
+                        <select id= 'sel' ng-model="plano">
+                            <option ng-repeat="o in nombres" value="{{o}}">
+                                {{o}}
+                            </option>
+                        </select>
+                        <button ng-click = "select()">Cargar Planos</button><br>
+                        <button ng-click = "dibuja()">Dibujar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <canvas id="canvas" width="800" height="600" style="border:1px solid" drawing figura='sel'></canvas>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-                       
-        
     </body>
 </html>
